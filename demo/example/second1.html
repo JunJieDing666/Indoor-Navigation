@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>停车缴费</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <style>
+        	.form-plate-num-area{
+        		margin-left: 10%;
+        		margin-top: 10% ;
+        		width: 15%;
+        		height: 3em;
+        		padding: 4px 0px 4px 4px;
+        	}
+        	.form-plate-num-secarea{
+        		width: 15%;
+        		margin-top: 10% ;
+        		padding: 4px 0px 4px 4px;
+        		height: 3em;
+        	}
+        	.form-plate-num{
+        		width: 50%;
+        		margin-top: 10% ;
+        		padding: 2px 0px 2px 2px;
+        		height: 3em;
+        	}
+        	.btn-primary{
+        		margin-top: 2em;
+        		margin-left: 15%;
+        		width: 70%;
+        		height: 3em;
+        	}
+        </style>
+		<!--jquery框架-->
+		<script type="application/javascript" src="http://demo.js.jdk5.com/jquery-1.12.3.min.js"></script>
+        <!--bootstrap框架-->
+		<link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!--吐司设计-->
+		<script type="text/javascript" src="../../js/mytoast.js"></script>
+		<link rel="stylesheet" href="../../css/mytoast.css" />
+    </head>
+	
+	<body style="width: 100%; height: 100%; background: #EEEEEE;">
+		<img src="../../images/logo.png" style="width: 50px;margin-left: 45%;margin-top: 20%;border-radius: 20px;"/>
+		<!--车牌号表单-->
+		<form action="demo-form.php" method="get">
+		  	<select class="form-plate-num-area" id="area">
+		  		<option>京</option>
+		  		<option>津</option>
+		  		<option>沪</option>
+		  		<option>渝</option>
+		  		<option>冀</option>
+		  		<option>豫</option>
+		  		<option>云</option>
+		  		<option>辽</option>
+		  		<option>黑</option>
+		  		<option>湘</option>
+		  		<option>皖</option>
+		  		<option>鲁</option>
+		  		<option>新</option>
+		  		<option>苏</option>
+		  		<option>浙</option>
+		  		<option>赣</option>
+		  		<option>鄂</option>
+		  		<option>桂</option>
+		  		<option>甘</option>
+		  		<option>晋</option>
+		  		<option>蒙</option>
+		  		<option>陕</option>
+		  		<option>吉</option>
+		  		<option>闽</option>
+		  		<option>贵</option>
+		  		<option>粤</option>
+		  		<option>青</option>
+		  		<option>藏</option>
+		  		<option>川</option>
+		  		<option>宁</option>
+		  		<option>琼</option>
+		  	</select>
+		  	<select class="form-plate-num-secarea" id="sec-area">
+		  		<option>A</option>
+		  		<option>B</option>
+		  		<option>C</option>
+		  		<option>D</option>
+		  		<option>E</option>
+		  		<option>F</option>
+		  		<option>G</option>
+		  		<option>H</option>
+		  		<option>I</option>
+		  		<option>J</option>
+		  		<option>K</option>
+		  		<option>L</option>
+		  		<option>M</option>
+		  		<option>N</option>
+		  		<option>O</option>
+		  		<option>P</option>
+		  		<option>Q</option>
+		  		<option>R</option>
+		  		<option>S</option>
+		  		<option>T</option>
+		  		<option>U</option>
+		  		<option>V</option>
+		  		<option>W</option>
+		  		<option>X</option>
+		  		<option>Y</option>
+		  		<option>Z</option>
+		  	</select>
+		  	<input class="form-plate-num" id="plate-num"/>
+	    </form>
+	    <!--提交按钮-->
+		<button id="query-money" class="btn btn-primary">查询车费</button>  
+        <script type="text/javascript">
+        	$("body").delegate("#query-money","click",function(event){
+        		var plateNum = document.getElementById("area").value + 
+	        	document.getElementById("sec-area").value + 
+	        	document.getElementById("plate-num").value ;
+			  	
+			  	var array = ['苏AQQ360', '沪C2B222', '粤QQO360', '重ASB250', '赣QQO360'];
+			  	if($.inArray(plateNum,array) != -1) {
+					window.location.href = "jsapi.php";
+			  	} else {
+			  		$(function(){
+						$.mytoast({
+							text: "该车牌号不存在，请输入合法车牌号！",
+							type: "error"
+						});
+					});
+			  	}
+       		});
+	        
+      </script>   
+    </body>
+
+</html>
