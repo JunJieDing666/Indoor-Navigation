@@ -1,0 +1,165 @@
+html,body{
+	height: 100%;
+	width: 100%;
+}
+
+#map {
+	width: 100%;
+	height: 100%;
+}
+
+.ol-full-screen {
+	float: right;
+}
+
+.ol-zoom {
+	float: left;
+}
+
+.ol-zoom-extent {
+	float: left;
+}
+
+.ol-popup {
+	position: absolute;
+	background-color: white;
+	-webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+	filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+	padding: 15px;
+	border-radius: 10px;
+	border: 1px solid #cccccc;
+	bottom: 12px;
+	left: -50px;
+}
+
+.ol-popup:after,
+.ol-popup:before {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.ol-popup:after {
+	border-top-color: white;
+	border-width: 10px;
+	left: 48px;
+	margin-left: -10px;
+}
+
+.ol-popup:before {
+	border-top-color: #cccccc;
+	border-width: 11px;
+	left: 48px;
+	margin-left: -11px;
+}
+
+.ol-popup-closer {
+	text-decoration: none;
+	position: absolute;
+	top: 2px;
+	right: 8px;
+}
+
+.ol-popup-closer:after {
+	content: "✖";
+}
+
+#start-modal {
+	position: inherit;
+	padding: 12px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#start-marker {
+	width: 1.5em;
+	height: 2em;
+	margin-left: -0.7em;
+	margin-top: -2em;
+	position: absolute;
+}
+
+#end-marker {
+	width: 1.5em;
+	height: 2em;
+	margin-left: -0.7em;
+	margin-top: -2em;
+	position: absolute;
+}
+
+#popup-content {
+	width: 10em;
+	height: auto;
+}
+
+#popup-btn-start {
+	width: 4em;
+	height: 2em;
+	float: left;
+	padding: 0.5px 0.5px 0.5px 0.5px;
+}
+
+#popup-btn-end {
+	width: 4em;
+	height: 2em;
+	float: right;
+	padding: 0.5px 0.5px 0.5px 0.5px;
+}
+
+.nav {
+	font-size: 0.85em;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	opacity: 0.8;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 1px 1px 1px 1px;
+}
+
+#all-op {
+	width: 2.5em;
+	height: 2.5em;
+}
+
+#park-car,
+#find-car,
+#path-plan,
+#scanhref {
+	font-size: 0.85em;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	opacity: 0.8;
+	background-color: #EEEEEE;
+}
+
+#float-left {
+	width: 40px;
+	height: auto;
+	position: absolute;
+	left: 10px;
+	top: 130px;
+	z-index: 200;
+	background: #fff;
+}
+
+#float-left a {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	color: #333;
+	text-align: center;
+	text-decoration: none;
+	opacity: 0.8;
+}
+
+#float-left a:hover,
+#float-left a.on {
+	color: #fff;
+	background: #7B98BC;
+	text-decoration: none;
+}
